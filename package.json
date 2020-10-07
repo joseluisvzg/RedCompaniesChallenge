@@ -1,0 +1,14 @@
+{
+    "name": "RedCompanies-Challenge",
+    "version": "0.0.1",
+    "description": "FooBarQix exercise",
+    "main": "src/index.js",
+    "author": "José Luis",
+    "license": "ISC",
+    "dependencies": {},
+    "scripts": {
+    },
+    "devDependencies": {
+        "mocha": "8.1.3"
+    }
+}
