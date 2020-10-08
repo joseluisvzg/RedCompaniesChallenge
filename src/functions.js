@@ -6,7 +6,6 @@ challenge.foo_bar_qix = function(n){
  	numbers.set(3, 'Foo');
 	numbers.set(5, 'Bar');
 	numbers.set(7, 'Qix');
-	numbers.set(0, '*');
 
 	let rule_match = false;
 	for (let [key, value] of numbers) {
@@ -20,24 +19,26 @@ challenge.foo_bar_qix = function(n){
 	for(let i=0;i<n_str.length;i++){
 		let num = parseInt(n_str[i]);
 		if(numbers.has(num)){
-			if(num != 0){
-				rule_match = true;
-			}
+			rule_match = true;
 			output.push(numbers.get(num));
 			continue;
 		}
 		output.push(n_str[i]);
 	}
 
-	if(rule_match){
-		let values = new Set();
-		for (let value of numbers.values()) {
-    		values.add(value);
+	let values = new Set();
+	for (let value of numbers.values()) {
+		values.add(value);
+	}
+	numbers.clear();
+	numbers.set(0, '*');
+	for(let i=0;i<output.length;i++){
+		if(numbers.has(parseInt(output[i]))){
+			output[i] = numbers.get(parseInt(output[i]));
+			continue;
 		}
-		for(let i=0;i<output.length;i++){
-			if(!values.has(output[i])){
-				delete output[i];
-			}
+		if(!values.has(output[i]) && rule_match){
+			delete output[i];
 		}
 	}
 
