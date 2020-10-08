@@ -11,13 +11,17 @@ let test_inputs = [
     { 'input' : 7,  'output' : 'QixQix'},
     { 'input' : 8,  'output' : '8'},
     { 'input' : 9,  'output' : 'Foo'},
-    { 'input' : 10, 'output' : 'Bar'},
+    { 'input' : 10, 'output' : 'Bar*'},
     { 'input' : 13, 'output' : 'Foo'},
     { 'input' : 15, 'output' : 'FooBarBar'},
     { 'input' : 21, 'output' : 'FooQix'},
     { 'input' : 33, 'output' : 'FooFooFoo'},
     { 'input' : 51, 'output' : 'FooBar'},
-    { 'input' : 53, 'output' : 'BarFoo'}
+    { 'input' : 53, 'output' : 'BarFoo'},
+    { 'input' : 101, 'output' : '1*1'},
+    { 'input' : 303, 'output' : 'FooFoo*Foo'},
+    { 'input' : 105, 'output' : 'FooBarQix*Bar'},
+    { 'input' : 10101, 'output' : 'FooQix**'}
 ]
 
 describe('Challenge tests', () => {
